@@ -23,8 +23,7 @@ if(!empty($_POST))
 	// Si tout est bon, on se prépare à rentrer le tout dans la BDD: 
 	if($validator->isValid()){
 		
-		$auth = new Auth();
-		$auth->register($pdo, $_POST['pseudo'], $_POST['password'], $_POST['email']);	
+		App::getAuth()->register($pdo, $_POST['pseudo'], $_POST['password'], $_POST['email']);	
 		Session::getInstance()->setFlash('success', "Un email de confirmation vous a été envoyé.");
 		App::redirect('connexion.php');
 	}else {
