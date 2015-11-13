@@ -35,12 +35,16 @@ class Auth{
 	return false;
 	}
 	
-	public function restrict($Session){
+	public function restrict(){
 		
 	if($this->Session->read('auth')){
 		$this->Session->setFlash('danger', $this->options['restrictions_msg']);
 		header('Location: connexion.php');
 		exit();
 	}
+	}
+	
+	public function connectFromCookie(){
+		
 	}
 }

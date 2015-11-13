@@ -1,10 +1,8 @@
 <?php
 	include('inc/header.php');
-	include ('inc/functions.php');
-	include_once ('inc/PDO.php');
-	require 'inc/bootstap.php';
+	$auth = App::getAuth();
+	$auth->connectFromCookie();
 	
-	reconnect_cookie();
 	if(isset($_SESSION['auth'])){
 		header('Location: account.php');
 		exit();
