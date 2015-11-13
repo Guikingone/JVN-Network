@@ -44,5 +44,10 @@ class Session{
 		return isset($_SESSION[$key]) ? $_SESSION[$key] : null;
 	}
 	
+	public function destroy($key){
+		
+			unset($_SESSION[$key]);
+	}
+	
 	
 }

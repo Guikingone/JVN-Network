@@ -110,4 +110,9 @@ class Auth{
 				setcookie('remember', $pseudo_id . '//' . $remember_token . sha1($pseudo_id . 'ratonslaveursdupok'), time() + 60 * 60 * 24 * 7);
 			
 		}
+		
+		public function logout(){
+			setcookie('remember', NULL -1);
+			$this->Session->destroy('auth');
+		}
 	}
