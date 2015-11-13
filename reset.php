@@ -20,11 +20,10 @@
 					App::redirect('account.php');
 				}
 			}		
-		}
-	}else {
+		}else {
 		Session::getInstance()->setFlash('danger', "Ce token n'est pas valide !");
 		App::redirect('login.php');
-	}else {
+	}else{
 		App::redirect('login.php');
 	}
 	}
