@@ -1,34 +1,24 @@
 <?php
 	include('inc/header.php');
 	$auth = App::getAuth();
-	$auth->connectFromCookie();
+	$pdo = App::getDatabase();
+	$auth->connectFromCookie($pdo);
 	
-	if(isset($_SESSION['auth'])){
-		header('Location: account.php');
-		exit();
+	if($auth->user()){
+		App::redirect('account.php');
 	}
-;
-if(!empty($_POST) && !empty($_POST['pseudo']) && !empty($_POST['password'])){
-	require 'inc/PDO.php';
-	$req = $pdo->prepare('SELECT * FROM membres WHERE (pseudo = :pseudo OR email = :pseudo) AND confirmed_at IS NOT NULL');
-	$req->execute(['pseudo' =>$_POST['pseudo']]);
-	$pseudo = $req->fetch();
-	if(password_verify($_POST['password'], $pseudo->password)){
+
+	if(!empty($_POST) && !empty($_POST['pseudo']) && !empty($_POST['password'])){
+	
+	$pseudo = $auth->login($pdo, $_POST['pseudo'], $_POST['password'], isset($_POST['remember']));
+	$Session = Session::getInstance();
+	if($pseudo){
 		
-		session_start();
-		$_SESSION['auth'] = $pseudo;
-		$_SESSION['flash']['success'] = "Vous êtes maintenant en ligne.";
-		
-		if($_POST['remember']){
-			
-			$remember_token = str_random(255);
-			$pdo->prepare('UPDATE membres SET remember_token = ? WHERE id = ?')->execute([$remember_token, $pseudo->id]);
-			setcookie('remember', $pseudo->id . '//' . $remember_token . sha1($pseudo->id . 'ratonslaveursdupok'), time() + 60 * 60 * 24 * 7);
-		}
-		header('Location: account.php');
-		exit();
+		$Session->setFlash('success', 'Vous êtes maintenant connecté.');
+		App::redirect('account.php');
 	}else {
-		$_SESSION['flash']['danger'] = "Identifiant ou mot de passe incorrect.";
+		
+		$Session->setFlash('danger', 'Identifiant ou de passe incorrect !');
 	}
 }
 ?>
