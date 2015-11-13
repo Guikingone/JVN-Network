@@ -1,30 +1,32 @@
 <?php
 	include('inc/header.php');
-	include ('inc/functions.php');
+	include ('inc/bootstrap.php');
 	
 	if(isset($_GET['id']) && isset($_GET['token'])){
-		require 'inc/PDO.php';
-		$req = $pdo->prepare('SELECT * FROM membres WHERE id = ? AND reset_token IS NOT NULL AND reset_token = ? AND reset_at > DATE_SUB(NOM(), INTERVAL 30 MINUTE)');
-		$req->execute($_GET['id'], ($_GET['token']));
-		$pseudo = $req->fetch();
+		
+		$auth = App::getAuth();
+		$pdo = App::getDatabase();
+		$pseudo = $auth->checkResetToken($pdo, $_GET['id'], $_GET['token']);
 		if($pseudo){
 			if(!empty($_POST)){
-				if(!empty($_POST['password']) && $_POST['password'] == $_POST['password_confirm']){
-					$password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-					$pdo->prepare('UPDATE membres SET password = ?, reset_at = NULL, reset_token = NULL')->execute(['password']);
-					session_start();
-					$_SESSION['flash']['success'] = "Votre mot de passe a bien été modifié.";
-					$_SESSION['auth'] = $pseudo;
-					header('Location: account.php');
-					exit();
+				$validator = new Validator($_POST);
+				$validator->isConfirmed('password');
+				if($validator->isValid()){
+					
+					$password = $auth->hashPassword($_POST['password']);
+					$pdo->query('UPDATE membres SET password = ?, reset_at = NULL, reset_token = NULL WHERE Id = ?', [$password, $_GET['id']]);			
+					Session::getInstance()->setFlash('success', "Votre mot de passe a bien été validé.");
+					$auth->connect($pseudo);
+					App::redirect('account.php');
 				}
-			}
+			}		
 		}
 	}else {
-		session_start();
-		$_SESSION['flash']['danger'] = "Ce token n'est pas valide !";
-		header ('Location: login.php');
-		exit();
+		Session::getInstance()->setFlash('danger', "Ce token n'est pas valide !");
+		App::redirect('login.php');
+	}else {
+		App::redirect('login.php');
+	}
 	}
 
 ?>

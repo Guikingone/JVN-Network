@@ -12,8 +12,12 @@ class Auth{
 		$this->Session = $Session;
 	}
 	
+	public function hashPassword($password){
+		return password_hash($password, PASSWORD_BCRYPT);
+	}
+	
 	public function register($pdo, $pseudo, $password, $email){
-		$password = password_hash($password, PASSWORD_BCRYPT);
+		$password = $this->hashPassword($password);
 		$token = Str::random(60);
 		$pdo->query("INSERT INTO membres SET pseudo = ?, password = ?, email = ?, confirmation_token = ?", $pseudo, $password, $email, $token);
 		
@@ -114,5 +118,23 @@ class Auth{
 		public function logout(){
 			setcookie('remember', NULL -1);
 			$this->Session->destroy('auth');
+		}
+		
+		public function resetPassword($pdo, $email){
+			
+			$pseudo = $pdo->query('SELECT * FROM membres WHERE email = ? AND confirmed_at IS NOT NULL', [$email])->fetch();
+			if($pseudo){
+				
+				$reset_token = Str::random(60);
+				$pdo->query('UPDATE membres SET reset_token = ?, reset_at = NOW() WHERE id = ?', [$reset_token, $pseudo->id]);
+				mail($_POST['email'], "Réinitialisation de votre mot de passe", "Afin de réinitialiser votre mot de passe, merci de cliquer sur ce lien\n\n:http://localhost/JVN/Fichiers/reset.php?id={$user->id}&token=$reset_token");
+				return $pseudo;
+			}
+			return false;
+		}
+				
+		public function checkResetToken($pdo, $pseudo_id, $token){
+				
+				return $pdo->query('SELECT * FROM membres WHERE id = ? AND reset_token IS NOT NULL AND reset_token = ? AND reset_at > DATE_SUB(NOM(), INTERVAL 30 MINUTE)', [$pseudo_id, $token])->fetch();
 		}
 	}
