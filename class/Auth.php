@@ -90,6 +90,7 @@ class Auth{
 		}
 	}
 	}
+}
 
 	public function login($pdo, $pseudo, $password, $remember = false){
 		

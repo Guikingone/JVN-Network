@@ -1,3 +1,7 @@
+<?php
+	require 'inc/bootstrap.php';
+	$auth = App::getDatabase();
+?>
 <!DOCTYPE html>
 <html>
 	<head>
