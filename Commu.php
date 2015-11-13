@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="GuikProd.">
+
+		<!-- Titre / Domaine -->
+		<title>JVN.org</title>
+		
+		<!-- Mackbook Link -->
+		<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+		
+		<!-- Bootstrap Core CSS -->
+		<link href="css/Bootstrap/bootstrap.css" rel="stylesheet">
+
+		<!-- Custom CSS -->
+		<link href="css/main.css" rel="stylesheet">
+		
+		<!-- Normalize -->
+		<link rel="stylesheet" href="css/normalize.css">
+
+		<!-- Custom Fonts -->
+		<link href="startbootstrap-agency-1.0.4/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+		<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+	</head>
+<body>
+	
+<?php 
+	include ("PHP/Navbar.php");
+?>
+
+	<!-- Explications -->
+	<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<h2 class="text-center">Avant de faire un choix :</h2>
+					<p class="text-center">Avant de vous lancer dans l'aventure, ils nous fallait expliquer plus en détails ce pourquoi nous avons concu ce système de membre à échelle.</p>
+					<p class="text-center">JVN.org est un site communautaire libre, nous ne rendons de compte à personne et surtout pas à une équipe de rédaction, NOUS sommes nous tous les rédacteurs du site et ces gardiens, ce site a été crée de manière libre et sans l'aide d'une équipe professionnelle, nous ne devons rien à personne pour sa mise en ligne, les seuls que nous devons remercier sont les membres de l'Equipe originel de JVN, ce sont ces personnes qui nous ont fait apprécier ce pourquoi nous sommes là aujourd'hui, avant de publier ce site et de mettre en branle ce chantier, nous savions que cela serait difficile mais si vous lisez ces lignes, preuve est faite que nous avions juste de nous lancer.
+					<br>
+					<br>
+					Comme nous l'expliquions plus haut, nous sommes libres et nous devons pouvoir faire vivre le site de manière correcte, son hébergement coûte de l'argent tout les mois et son développement peut sembler facile et rapide mais nous devons nous en occuper quotidiennement et personnellement afin de s'assurer que tout est en place où il devrait être, avant même sa création, ce site tout beau tout propre fut le point de départ de débat houleux et dur entre ces créateurs, devions-nous vraiment proposer un service d'abonnement pour le faire vivre ? Devions nous réellement nous reposer sur la communauté et ses généreux donateurs pour le faire fonctionner décemment ?
+					<br>
+					<br>
+					La réponse est difficile et nous devons avouer que même aujourd'hui nous nous questionnons toujours sur la réponse, pour couper court au débat, nous sommes partis sur une base d'abonnement simple et peu contraignant financièrement, payer tout les mois ne serait pas pratique et comme le site ne vit que par sa communauté, nous devions trouver autre chose, payer tout les 3 mois s'imposa de par sa simplicité à mettre en place et de par son aspect rapide et peu contraignant, vous payer, vous obtener un retour sur investissement direct, bien entendu, que pouvions nous offir ?
+					<br>
+					<br>
+					Les détails sont encore sommaires et nul doute que d'autres offres arriveront par la suite, cependant, nous pouvons vous assurer de leur maintien définitif (pour ceux présents actuellement), les détails de ces offres seront publiés plus tard mais sachez que nous sommes là POUR VOUS et que VOUS êtes le moteur du site.
+					<br>
+					<br>
+					L'Equipe.</p>
+				</div>
+			</div>
+            <div class="row">
+
+                <!-- item -->
+                <div class="col-md-4 text-center">
+                    <div class="panel panel-danger panel-pricing">
+                        <div class="panel-heading">
+                            <i class="fa fa-user"></i>
+                            <h3>Membre Actif</h3>
+                        </div>
+                        <div class="panel-body text-center">
+                            <p><strong>Gratuit</strong></p>
+                        </div>
+                        <ul class="list-group text-center">
+                            <li class="list-group-item"><i class="fa fa-check"></i>Accès complet au site</li>
+                            <li class="list-group-item"><i class="fa fa-check"></i>Rédaction de billet et mise en ligne de contenu</li>
+                            <li class="list-group-item"><i class="fa fa-check"></i>Accès Online et Offline au contenu</li>
+							<li class="list-group-item"><i class="fa fa-check"></i>Tchat exclusif ouvert 24/7</li>
+							<li class="list-group-item"><i class="fa fa-check"></i>RDV Team exclusif</li>
+							<li class="list-group-item"><i class="fa fa-check"></i>Coupon de réduction mensuel sur la Boutique d'une valeur de 5€</li>
+                        </ul>
+                        <div class="panel-footer">
+                            <a class="btn btn-lg btn-block btn-danger" href="Inscription.php">Rentrer dans le cercle</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /item -->
+
+                <!-- item -->
+                <div class="col-md-4 text-center">
+                    <div class="panel panel-warning panel-pricing">
+                        <div class="panel-heading">
+                            <i class="fa fa-user"></i>
+                            <h3>Membre VIP</h3>
+                        </div>
+                        <div class="panel-body text-center">
+                            <p><strong>5€ / 3 Mois</strong></p>
+                        </div>
+                        <ul class="list-group text-center">
+                            <li class="list-group-item"><i class="fa fa-check"></i>Tout les accès Active Member</li>
+                            <li class="list-group-item"><i class="fa fa-check"></i>Tchat vidéo avec la communauté</li>
+                            <li class="list-group-item"><i class="fa fa-check"></i>Contribution au futur du site</li>
+							<li class="list-group-item"><i class="fa fa-check"></i>Retour sur investissements (Soumis au succès financier)</li>
+							<li class="list-group-item"><i class="fa fa-check"></i>Création d'un espace personnel unique</li>
+							<li class="list-group-item"><i class="fa fa-check"></i>Coupon de réduction mensuel sur la Boutique d'une valeur de 10€</li>
+                        </ul>
+                        <div class="panel-footer">
+                            <a class="btn btn-lg btn-block btn-warning" href="Paiement.php">Rentrer dans le cercle</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /item -->
+
+                <!-- item -->
+                <div class="col-md-4 text-center">
+                    <div class="panel panel-success panel-pricing">
+                        <div class="panel-heading">
+                            <i class="fa fa-user"></i>
+                            <h3>God Member</h3>
+                        </div>
+                        <div class="panel-body text-center">
+                            <p><strong>10€ / 3 Mois</strong></p>
+                        </div>
+                        <ul class="list-group text-center">
+                            <li class="list-group-item"><i class="fa fa-check"></i>Accès Active et VIP</li>
+                            <li class="list-group-item"><i class="fa fa-check"></i>Réception des MAJ "Work in Progress"</li>
+                            <li class="list-group-item"><i class="fa fa-check"></i>Réunion autour du développement du site</li>
+							<li class="list-group-item"><i class="fa fa-check"></i>Support via mail</li>
+							<li class="list-group-item"><i class="fa fa-check"></i>Jeu offert durant les Soldes Steam</li>
+							<li class="list-group-item"><i class="fa fa-check"></i>Livraison d'Oreo mensuelle !</li>
+							<li class="list-group-item"><i class="fa fa-check"></i>Coupon de réduction mensuel sur la Boutique d'une valeur de 15€</li>
+                        </ul>
+                        <div class="panel-footer">
+                            <a class="btn btn-lg btn-block btn-success" href="Paiement.php">Rentrer dans le cercle</a>
+                        </div>
+                    </div>
+				</div>
+				
+				<!-- item -->
+                <div class="col-md-4 text-center">
+                    <div class="panel panel-danger panel-pricing">
+                        <div class="panel-heading">
+                            <i class="fa fa-user"></i>
+                            <h3>Mécène</h3>
+                        </div>
+                        <div class="panel-body text-center">
+                            <p><strong>20€ / 3 Mois</strong></p>
+                        </div>
+                        <ul class="list-group text-center">
+                            <li class="list-group-item"><i class="fa fa-check"></i>Accès Actif, VIP et God</li>
+                            <li class="list-group-item"><i class="fa fa-check"></i>Poste de Rédacteur</li>
+                            <li class="list-group-item"><i class="fa fa-check"></i>Accès aux coulisses de l'Equipe</li>
+							<li class="list-group-item"><i class="fa fa-check"></i>Abonnement offert à JV le Mag</li>
+							<li class="list-group-item"><i class="fa fa-check"></i>Places offerts à la PGW</li>
+							<li class="list-group-item"><i class="fa fa-check"></i>Article au choix offert dans la Boutique</li>
+                        </ul>
+                        <div class="panel-footer">
+                            <a class="btn btn-lg btn-block btn-danger" href="Inscription.php">Rentrer dans le cercle</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /item -->
+
+                <!-- item -->
+                <div class="col-md-4 text-center">
+                    <div class="panel panel-warning panel-pricing">
+                        <div class="panel-heading">
+                            <i class="fa fa-user"></i>
+                            <h3>Grand Gourou</h3>
+                        </div>
+                        <div class="panel-body text-center">
+                            <p><strong>30€ / 3 mois</strong></p>
+                        </div>
+                        <ul class="list-group text-center">
+							<li class="list-group-item"><i class="fa fa-check"></i>Accès Grand Gourou</li>
+                            <li class="list-group-item"><i class="fa fa-check"></i>Bonus Mécène offert</li>
+                            <li class="list-group-item"><i class="fa fa-check"></i>Poste d'Administrateur</li>
+							<li class="list-group-item"><i class="fa fa-check"></i>Jeu offert tout les 3 mois via Steam, XBL, PSN+</li>
+							<li class="list-group-item"><i class="fa fa-check"></i>Goodies offert via LDLC.com</li>
+							<li class="list-group-item"><i class="fa fa-check"></i>Livraison offerte</li>
+                        </ul>
+                        <div class="panel-footer">
+                            <a class="btn btn-lg btn-block btn-warning" href="Paiement.php">Rentrer dans le cercle</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /item -->
+
+                <!-- item -->
+                <div class="col-md-4 text-center">
+                    <div class="panel panel-success panel-pricing">
+                        <div class="panel-heading">
+                            <i class="fa fa-user"></i>
+                            <h3>Maître JVN</h3>
+                        </div>
+                        <div class="panel-body text-center">
+                            <p><strong>40€ / 3 Mois</strong></p>
+                        </div>
+                        <ul class="list-group text-center">
+                            <li class="list-group-item"><i class="fa fa-check"></i>Accès Maître</li>
+							<li class="list-group-item"><i class="fa fa-check"></i>Contact direct avec l'Equipe via téléphone</li>
+							<li class="list-group-item"><i class="fa fa-check"></i>Bonus à définir</li>
+                        </ul>
+                        <div class="panel-footer">
+                            <a class="btn btn-lg btn-block btn-success" href="Paiement.php">Rentrer dans le cercle</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /item -->
+				
+				
+
+            </div>
+        </div>
+	 </section>
+    <!-- /Plans -->
+
+	
+<!-- ========== Javascript ========== -->
+		
+	<!-- jQuery -->
+	<script src="js/vendor/jquery-1.11.3.min.js"
+
+	<!-- Modernizr -->
+	<script src="js/vendor/modernizr-2.8.3.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/Bootstrap/bootstrap.min.js"></script>
+	
+	<!-- Core JS -->
+	<script src="js/main.js"></script>
+         
+</body>
+</html>
