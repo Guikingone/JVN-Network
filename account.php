@@ -1,5 +1,5 @@
 <?php 
-	require 'inc/functions.php';
+	require 'inc/bootstrap.php';
 	logged_only();
 	if(!empty($_POST)){
 		if(empty($_POST['password']) || $_POST['password'] != $_POST['password_cofirm']){
