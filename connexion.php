@@ -2,6 +2,7 @@
 	include('inc/header.php');
 	include ('inc/functions.php');
 	include_once ('inc/PDO.php');
+	require 'inc/bootstap.php';
 	
 	reconnect_cookie();
 	if(isset($_SESSION['auth'])){

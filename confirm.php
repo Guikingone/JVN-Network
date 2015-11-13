@@ -1,25 +1,14 @@
 <?php
-$user_id = $_GET['id'];
+require 'inc/bootstrap.php';
+$pdo = App::getDatabase();
+$auth = new Auth($pdo);
 
-$token = $_GET['token']:
-require 'inc/PDO.php'; 
+if ($auth->confirm($_GET['id'], $_GET['token'], Session::getInstance())){
 
-$req = $pdo->prepare('SELECT * FROM membres WHERE id = ?');
-$req->execute([$user_id]);
-
-$user = $req->fetch();
-
-session_start();
-
-if ($user && $user->confirmation_token == $token){
-	
-	$pdo->prepare('UPDATE membres SET confirmation_token = NULL, confirmed_at = NOW() WHERE id = ?')->execute([$user_id]);
-	$_SESSION['flash']['success'] = "Votre compte a bien été validé.";
-	$_SESSION['auth'] = $pseudo;
-	header('Location: account.php');
-}
-else 
-{
-	$_SESSION['flash']['danger'] = "Ce token n'est plus valide.";
-	header('Location: login.php');
-}
+		$_SESSION::getInstance()->setFlash('success', "Votre compte est validé !");
+		App::redirect('account.php');
+	}
+	else {
+		$_SESSION::getInstance()->setFlash('danger', "Ce token n'est plus valide !");
+		App::redirect('login.php');
+	}

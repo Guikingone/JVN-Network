@@ -23,19 +23,14 @@ if(!empty($_POST))
 	// Si tout est bon, on se prépare à rentrer le tout dans la BDD: 
 	if($validator->isValid()){
 		
-		$password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-		$token = str_random(60);
-		$db->query("INSERT INTO membres SET pseudo = ?, password = ?, email = ?, confirmation_token = ?", [$_POST['pseudo'], $password, $_POST['email'], $token]);
-		$user_id = $db->lastInsertId();
-		mail($_POST['email'], "Confirmation de votre compte", "Afin de valider votre compte, merci de cliquer sur ce lien\n\n:http://localhost/JVN/Fichiers/confirm.php?id=$user_id&token=$token");
-		$_SESSION['flash']['success'] = "Un email de confirmation vous a été envoyé.";
-		header('Location: connexion.php');
-		exit();
+		$auth = new Auth($PDO);
+		$auth->register($_POST['pseudo'], $_POST['password'], $_POST['email']);	
+		Session::getInstance()->setFlash('success', "Un email de confirmation vous a été envoyé.");
+		App::redirect('connexion.php');
 	}else {
 		$errors = $validator->getErrors();	
 	}
 	
-}
 ?>
 
 <?php
