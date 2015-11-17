@@ -49,9 +49,6 @@
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
-						<?php if(isset($_SESSION['auth'])): ?>
-							<li><a href="deconnexion.php">Se déconnecter</a></li>
-						<?php else: ?>
 							<li class="dropdown">
 							<a data-toggle="dropdown" href="#Membres">Membres<b class="caret"></b></a>
 							<ul class="dropdown-menu">
@@ -63,7 +60,6 @@
 								</li>
 							</ul>
 							</li>
-						<?php endif; ?>
 						<li>
 							<a href="Blog.php">Blog</a>
 						</li>
