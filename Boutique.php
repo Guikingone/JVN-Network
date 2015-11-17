@@ -1,7 +1,15 @@
 <?php 
 	include('inc/header.php');
 ?>
-	
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h1>Bienvenue sur la boutique officielle JVN-Network !</h1>
+		</div>
+		<div class="col-md-12">
+			<p>Vous l'avez attendu, elle est enfin là, la boutique officielle remplie de goodies, de cadeaux et bien plus vous tend les bras.</p>
+	</div>
+</div>
 	<!-- Menu présentation -->
 	<div class="row">
 		<div class="large-12 columns">

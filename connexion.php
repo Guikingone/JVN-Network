@@ -22,7 +22,7 @@
 				<input type="checkbox" name="remember" value="1"/>
 			</label>
 		</div>
-		<button type="submit" class="btn">Se connecter
+		<button type="submit" class="btn btn-danger">Se connecter
 		</button>
 		</form>
 	</p>
