@@ -1,26 +1,5 @@
 <?php
-	include('inc/header.php');
-	$auth = App::getAuth();
-	$pdo = App::getDatabase();
-	$auth->connectFromCookie($pdo);
-	
-	if($auth->user()){
-		App::redirect('account.php');
-	}
 
-	if(!empty($_POST) && !empty($_POST['pseudo']) && !empty($_POST['password'])){
-	
-	$pseudo = $auth->login($pdo, $_POST['pseudo'], $_POST['password'], isset($_POST['remember']));
-	$Session = Session::getInstance();
-	if($pseudo){
-		
-		$Session->setFlash('success', 'Vous êtes maintenant connecté.');
-		App::redirect('account.php');
-	}else {
-		
-		$Session->setFlash('danger', 'Identifiant ou de passe incorrect !');
-	}
-}
 ?>
 <div class="container">
 	<div class="row">
