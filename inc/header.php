@@ -1,3 +1,6 @@
+<?php
+	require ('inc/functions.php');
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -34,8 +37,6 @@
 
 	</head>
 <body>
-<div class="container">
-	<div class="row">
 <nav class="navbar navbar-default navbar-fixed-top">
 			<div class="container">
 				<div class="navbar-header">
@@ -50,7 +51,7 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
 							<li class="dropdown">
-							<a data-toggle="dropdown" href="#Membres">Membres<b class="caret"></b></a>
+							<a data-toggle="dropdown" href="#">Membres<b class="caret"></b></a>
 							<ul class="dropdown-menu">
 								<li>
 									<a href="inscription.php">S'inscrire</a>
@@ -76,18 +77,5 @@
 				</div>
 		</div>
 </nav>
-</div>
-</div>
 
-	
-	<?php if(Session::getInstance()->hasFlashes()): ?>
-	<?php foreach(Session::getInstance()->getFlashes() as $type => $message): ?>
-	
-		<div class="alert alert-<?= $type; ?>">
-			<?= $message; ?>
-		</div>
-	
-	<?php endforeach; ?>
-	<?php endif; ?>
-	
 	

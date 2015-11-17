@@ -1,6 +1,25 @@
 <?php
 	include ('inc/header.php');
 ?>
+
+<?php
+if(!empty($_POST)){
+	
+	$errors = array();
+	
+	if(empty($_POST['pseudo']) || !preg_match('/^[a-zA-Z0-9_]+$/', $_POST['pseudo'])){
+		$errors["pseudo"] = "Votre pseudonyme n'est pas valide.";
+	}
+	
+	if(empty($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+		$errors['email'] = "Votre adresse email n'est pas valide.";
+	}
+	
+	if(empty($_POST['password']) || $_POST['password'] != $_POST['password_confirm']){
+		$errors['password'] = "Vous devez rentrer un mot de passe valide.";
+	}
+}
+?>
 <div class="container">
 	<div class="row">
 	 <div class="col-md-12">
@@ -30,7 +49,7 @@
 				<input type="password" name="password_confirm" class="form-control"/>
 			</label>
 		</div>
-		<button type="submit" class="btn btn-primary">M'inscrire
+		<button type="submit" class="btn btn-danger">M'inscrire
 		</button>
 		</form>
 	  </fieldset>
