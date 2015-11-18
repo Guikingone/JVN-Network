@@ -1,8 +1,6 @@
 <?php
 	include ('inc/header.php');
-?>
-
-<?php
+	
 if(!empty($_POST)){
 	
 	$errors = array();
@@ -18,13 +16,15 @@ if(!empty($_POST)){
 	if(empty($_POST['password']) || $_POST['password'] != $_POST['password_confirm']){
 		$errors['password'] = "Vous devez rentrer un mot de passe valide.";
 	}
+	debug($errors);
 }
 ?>
 <div class="container">
 	<div class="row">
 	 <div class="col-md-12">
 	<br>
-	<p>
+	<br>
+	<br>
 	  <fieldset>
 		 <h1>S'inscrire</h1>
 		  
@@ -53,7 +53,6 @@ if(!empty($_POST)){
 		</button>
 		</form>
 	  </fieldset>
-	</p>
 	 </div>
 	</div>
 </div>
