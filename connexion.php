@@ -3,8 +3,9 @@
 ?>
 <div class="container">
 	<div class="row">
-	 <div class="col-md-12">
+	 <div class="col-lg-12">
 		<br>
+		<fieldset class="text-center">
 		 <h1>Se connecter :</h1>		
 		 <form action="" method="post">
 		<div class="form-group>">
@@ -25,6 +26,7 @@
 		<button type="submit" class="btn btn-danger">Se connecter
 		</button>
 		</form>
+		<fieldset>
 	</p>
 	 </div>
 	</div>
