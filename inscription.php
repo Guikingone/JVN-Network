@@ -1,7 +1,8 @@
 <?php
+session_start();
   require ('inc/header.php');
   require_once ('inc/functions.php');
-	require ('inc/Pdo.php');
+  require ('inc/Pdo.php');
 	
 if(!empty($_POST)){
 	
@@ -36,13 +37,15 @@ if(!empty($_POST)){
 	}
 	
 	if(empty($errors)){
+
 	$req = $pdo->prepare("INSERT INTO membres_jvn SET pseudo = ?, password = ?, email = ?, confirmation_token = ?");
 	$password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 	$token = str_random(65);
 	$req->execute([$_POST['pseudo'], $password, $_POST['email'], $token]);
-  $user_id = $pdo->lastInsertId();
+    $user_id = $pdo->lastInsertId();
 	mail($_POST['email'], "Confirmation de votre compte", "Afin de valider votre compte, merci de cliquer sur ce lien\n\nhttp://localhost/Jvn_network/JVN/confirm.php?id=$user_id&token=$token");
-	header('Location: connexion.php');
+	$_SESSION['flash']['success'] = "Un email de confirmation vous a été envoyé pour valider votre compte";
+    header('Location: connexion.php');
   exit();
   }
 }

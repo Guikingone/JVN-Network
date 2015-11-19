@@ -1,5 +1,7 @@
 <?php
-	require ('inc/functions.php');
+    if(session_status() == PHP_SESSION_NONE){
+        session_start();
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -53,12 +55,17 @@
 							<li class="dropdown">
 							<a data-toggle="dropdown" href="#">Membres<b class="caret"></b></a>
 							<ul class="dropdown-menu">
+                                <?php if(isset($_SESSION['auth'])): ?>
+                                    <li><a href="logout.php">Se déconnecter</a></li>
+                                <?php else: ?>
+                                    ?>
 								<li>
 									<a href="inscription.php">S'inscrire</a>
 								</li>
 								<li>
 									<a href="connexion.php">Se Connecter</a>
 								</li>
+                                <?php endif;?>
 							</ul>
 							</li>
 						<li>
@@ -77,5 +84,12 @@
 				</div>
 		</div>
 </div>
-
+<?php if(isset($_SESSION['flash'])): ?>
+<?php foreach($_SESSION['flash'] as $type => $message); ?>
+    <div class="alert alert-<?= $type; ?>">
+        <?= $message; ?>
+    </div>
+<?php endforeach; ?>
+<?php unset ($_SESSION['flash']);?>
+<?php endif;?>
 	

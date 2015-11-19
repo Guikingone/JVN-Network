@@ -1,5 +1,6 @@
 <?php
 	include ('inc/header.php');
+    require('inc/function.php');
 ?>
 <div class="container">
 	<div class="row">
