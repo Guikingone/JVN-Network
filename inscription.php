@@ -9,11 +9,11 @@ if(!empty($_POST)){
 	if(empty($_POST['pseudo']) || !preg_match('/^[a-zA-Z0-9_]+$/', $_POST['pseudo'])){
 		$errors["pseudo"] = "Votre pseudonyme n'est pas valide.";
 	}else {
-		$req = $pdo->prepare('SELECT id FROM membre_jvn WHERE pseudo = ?');
+	$req = $pdo->prepare('SELECT id FROM membres_jvn WHERE pseudo = ?');
     $req->execute([$_POST['pseudo']]);
     $user = $req->fetch();
-    if($user){
-    $errors['pseudo'] = "Ce pseudo est déjà pris !";
+    	if($user){
+    	$errors['pseudo'] = "Ce pseudo est déjà pris !";
     
 	  }
   }
@@ -21,22 +21,23 @@ if(!empty($_POST)){
 	if(empty($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
 		$errors['email'] = "Votre adresse email n'est pas valide.";
 	}else {
-		$req = $pdo->prepare('SELECT id FROM membre_jvn WHERE email = ?');
+	$req = $pdo->prepare('SELECT id FROM membres_jvn WHERE email = ?');
     $req->execute([$_POST['email']]);
     $user = $req->fetch();
-    if($user){
-    $errors['email'] = "Cette adresse email est déjà utilisée !";
+		if($user){
+		$errors['email'] = "Cette adresse email est déjà utilisée !";
     
 	  }
+	}
 	
 	if(empty($_POST['password']) || $_POST['password'] != $_POST['password_confirm']){
 		$errors['password'] = "Vous devez rentrer un mot de passe valide.";
 	}
 	
 	if(empty($errors)){
-	$req = $pdo->prepare("INSERT INTO membre_jvn SET pseudo = ?, password = ?, email = ?");
+	$req = $pdo->prepare("INSERT INTO membres_jvn SET pseudo = ?, password = ?, email = ?");
 	$password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-	$req->execute([$_POST['password'], $password, $_POST['email']]);
+	$req->execute([$_POST['pseudo'], $password, $_POST['email']]);
 	
 	}
 }
@@ -49,8 +50,8 @@ if(!empty($_POST)){
 	<br>
 	  <fieldset class="text-center">
 		 <h1>S'inscrire</h1>
-      
-      <?php if(!empty($errors)): ?>
+		 
+	 <?php if(!empty($errors)): ?>
       <div class="alert alert-danger">
         <p>Vous n'avez pas rempli le formulaire correctement :</p>
         <ul>
@@ -60,7 +61,7 @@ if(!empty($_POST)){
         </ul>
       </div>
       <?php endif; ?>
-		  
+	  
 		<form action="" method="post">
 		<div class="form-group>">
 			<label>Votre Pseudonyme :
