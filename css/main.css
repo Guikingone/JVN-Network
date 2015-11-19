@@ -506,7 +506,7 @@ section h3.section-subheading {
 }
 .mi-slider ul li {
 	display: inline-block;
-	paddin: 20px;
+	padding: 20px;
 	width: 20%;
 	max-width: 300px;
 	transform: translateX(600%);
