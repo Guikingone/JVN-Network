@@ -2,12 +2,12 @@
 	include ("inc/header.php");
 ?>
 
-		<!-- Header -->
+		<!-- Blog Principal -->
 		<header>
 			<div class="container">
 				<div class="row">
 				<div class="centered">
-					<div class="intro-lead-in">Bienvenue sur JVN.org !</div>
+					<!-- Blog Principal -->
 				</div>
 				</div>
 			</div>

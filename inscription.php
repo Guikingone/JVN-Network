@@ -69,7 +69,7 @@ if(!empty($_POST)){
 					Les détails sont encore sommaires et nul doute que d'autres offres arriveront par la suite, cependant, nous pouvons vous assurer de leur maintien définitif (pour ceux présents actuellement), les détails de ces offres seront publiés plus tard mais sachez que nous sommes là POUR VOUS et que VOUS êtes le moteur du site.
 					<br>
 					<br>
-					Pour vous abonner, rien de plus simple, une fois votre compte créé, vous arriverez sur votre page personnel, cette dernère vous offrira la possibilité de choisir l'abonnement voulu, les démarches sont expliquées par la suite.'
+					Pour vous abonner, rien de plus simple, une fois votre compte créé, vous arriverez sur votre page personnel, cette dernère vous offrira la possibilité de choisir l'abonnement voulu, les démarches sont expliquées par la suite.
 					<br>
 					<br>
 					L'Equipe.</p>
