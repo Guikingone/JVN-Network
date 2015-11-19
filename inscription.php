@@ -1,5 +1,6 @@
 <?php
-	include ('inc/header.php');
+  require ('inc/header.php');
+  require_once ('inc/functions.php');
 	require ('inc/Pdo.php');
 	
 if(!empty($_POST)){
@@ -35,19 +36,23 @@ if(!empty($_POST)){
 	}
 	
 	if(empty($errors)){
-	$req = $pdo->prepare("INSERT INTO membres_jvn SET pseudo = ?, password = ?, email = ?");
+	$req = $pdo->prepare("INSERT INTO membres_jvn SET pseudo = ?, password = ?, email = ?, confirmation_token = ?");
 	$password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-	$req->execute([$_POST['pseudo'], $password, $_POST['email']]);
-	
-	}
+	$token = str_random(65);
+	$req->execute([$_POST['pseudo'], $password, $_POST['email'], $token]);
+  $user_id = $pdo->lastInsertId();
+	mail($_POST['email'], "Confirmation de votre compte", "Afin de valider votre compte, merci de cliquer sur ce lien\n\nhttp://localhost/Jvn_network/JVN/confirm.php?id=$user_id&token=$token");
+	header('Location: connexion.php');
+  exit();
+  }
 }
 ?>
 <div class="container">
 	<div class="row">
 	 <div class="col-lg-6">
-	<br>
-	<br>
-	<br>
+	<b />
+	<br />
+	<br />
 	  <fieldset class="text-center">
 		 <h1>S'inscrire</h1>
 		 
@@ -92,7 +97,7 @@ if(!empty($_POST)){
 					<h2 class="text-center">Avant d'aller plus loin</h2>
 					<p class="text-center">Avant de vous lancer dans l'aventure, ils nous fallait expliquer plus en détails ce pourquoi nous avons concu ce système de membre à échelle.</p>
 					<p class="text-center">JVN.org est un site communautaire libre, nous ne rendons de compte à personne et surtout pas à une équipe de rédaction, NOUS sommes nous tous les rédacteurs du site et ces gardiens, ce site a été crée de manière libre et sans l'aide d'une équipe professionnelle, nous ne devons rien à personne pour sa mise en ligne, les seuls que nous devons remercier sont les membres de l'Equipe originel de JVN, ce sont ces personnes qui nous ont fait apprécier ce pourquoi nous sommes là aujourd'hui, avant de publier ce site et de mettre en branle ce chantier, nous savions que cela serait difficile mais si vous lisez ces lignes, preuve est faite que nous avions juste de nous lancer.
-					<br>
+					<br />
 					<br>
 					Comme nous l'expliquions plus haut, nous sommes libres et nous devons pouvoir faire vivre le site de manière correcte, son hébergement coûte de l'argent tout les mois et son développement peut sembler facile et rapide mais nous devons nous en occuper quotidiennement et personnellement afin de s'assurer que tout est en place où il devrait être, avant même sa création, ce site tout beau tout propre fut le point de départ de débat houleux et dur entre ces créateurs, devions-nous vraiment proposer un service d'abonnement pour le faire vivre ? Devions nous réellement nous reposer sur la communauté et ses généreux donateurs pour le faire fonctionner décemment ?
 					<br>
