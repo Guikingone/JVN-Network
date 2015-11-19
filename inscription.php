@@ -1,5 +1,6 @@
 <?php
 	include ('inc/header.php');
+	require ('inc/Pdo.php');
 	
 if(!empty($_POST)){
 	
@@ -7,6 +8,9 @@ if(!empty($_POST)){
 	
 	if(empty($_POST['pseudo']) || !preg_match('/^[a-zA-Z0-9_]+$/', $_POST['pseudo'])){
 		$errors["pseudo"] = "Votre pseudonyme n'est pas valide.";
+	}else {
+		$req = $pdo->prepare('SELECT id FROM membre_jvn WHERE pseudo = ?');
+    $req->execute([$_POST['pseudo']];
 	}
 	
 	if(empty($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
@@ -16,6 +20,14 @@ if(!empty($_POST)){
 	if(empty($_POST['password']) || $_POST['password'] != $_POST['password_confirm']){
 		$errors['password'] = "Vous devez rentrer un mot de passe valide.";
 	}
+	
+	if(empty($errors)){
+	$req = $pdo->prepare("INSERT INTO membre_jvn SET pseudo = ?, password = ?, email = ?");
+	$password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+	$req->execute([$_POST['password'], $password, $_POST['email']]);
+	
+	}
+	
 	debug($errors);
 }
 ?>
