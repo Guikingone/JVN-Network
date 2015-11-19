@@ -6,7 +6,7 @@
 		<header>
 			<div class="container">
 				<div class="row">
-				<div class="intro-text">
+				<div class="centered">
 					<div class="intro-lead-in">Bienvenue sur JVN.org !</div>
 				</div>
 				</div>

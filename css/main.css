@@ -103,6 +103,10 @@ textarea {
 		overflow-x: hidden;
 		font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
 	}
+    
+    .centered {
+        text-align: center;
+    }
 
 		/* ======= Style Navbar ====== */
 
@@ -496,7 +500,7 @@ section h3.section-subheading {
 .no-js .mi-slider ul {
 	position: relative;
 	left: auto;
-	bottom; auto;
+	bottom: auto;
 	margin: 0;
 	overflow: hidden;
 }
@@ -1056,7 +1060,7 @@ fieldset[disabled] .btn-xl.active {
     }
     .panel-title {
         font-weight: 400;
-        color: $white;
+        color: white;
     }
 /*----------------------------------
     Macbook pro mockup from:
@@ -1124,7 +1128,7 @@ fieldset[disabled] .btn-xl.active {
   margin: 0 auto;
   position: relative;
   top: 2.0625em;
-  // background: #1d1d1d;
+  background: #1d1d1d;
   background: #fff;
   overflow: hidden;
 }

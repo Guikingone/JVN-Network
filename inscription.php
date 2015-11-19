@@ -31,7 +31,7 @@ if(!empty($_POST)){
 		<form action="" method="post">
 		<div class="form-group>">
 			<label>Votre Pseudonyme :
-			  <input type="text" name="pseudo" class="form-control"/>
+			  <input type="text" name="pseudo" class="form-control" placeholder="11 caractères max"/>
 			</label>
 		</div>
 		<div class="form-group">	
@@ -71,88 +71,10 @@ if(!empty($_POST)){
 					<br>
 					Pour vous abonner, rien de plus simple, une fois votre compte créé, vous arriverez sur votre page personnel, cette dernère vous offrira la possibilité de choisir l'abonnement voulu, les démarches sont expliquées par la suite.'
 					<br>
+					<br>
 					L'Equipe.</p>
 				</div>
 			</div>
-</div>
-
-
-<div class="container">
-	<div class="row">
-                <div class="col-md-4 text-center">
-                    <div class="panel panel-danger panel-pricing">
-                        <div class="panel-heading">
-                            <i class="fa fa-user"></i>
-                            <h3>Membre Actif</h3>
-                        </div>
-                        <div class="panel-body text-center">
-                            <p><strong>Gratuit</strong></p>
-                        </div>
-                        <ul class="list-group text-center">
-                            <li class="list-group-item"><i class="fa fa-check"></i>Accès complet au site</li>
-                            <li class="list-group-item"><i class="fa fa-check"></i>Rédaction de billet et mise en ligne de contenu</li>
-                            <li class="list-group-item"><i class="fa fa-check"></i>Accès Online et Offline au contenu</li>
-							<li class="list-group-item"><i class="fa fa-check"></i>Tchat exclusif ouvert 24/7</li>
-							<li class="list-group-item"><i class="fa fa-check"></i>RDV Team exclusif</li>
-							<li class="list-group-item"><i class="fa fa-check"></i>Coupon de réduction mensuel sur la Boutique d'une valeur de 5€</li>
-                        </ul>
-                        <div class="panel-footer">
-                            <a class="btn btn-lg btn-block btn-danger" href="Inscription.php">Rentrer dans le cercle</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- /item -->
-
-                <!-- item -->
-                <div class="col-md-4 text-center">
-                    <div class="panel panel-warning panel-pricing">
-                        <div class="panel-heading">
-                            <i class="fa fa-user"></i>
-                            <h3>Membre VIP</h3>
-                        </div>
-                        <div class="panel-body text-center">
-                            <p><strong>5€ / 3 Mois</strong></p>
-                        </div>
-                        <ul class="list-group text-center">
-                            <li class="list-group-item"><i class="fa fa-check"></i>Tout les accès Active Member</li>
-                            <li class="list-group-item"><i class="fa fa-check"></i>Tchat vidéo avec la communauté</li>
-                            <li class="list-group-item"><i class="fa fa-check"></i>Contribution au futur du site</li>
-							<li class="list-group-item"><i class="fa fa-check"></i>Retour sur investissements (Soumis au succès financier)</li>
-							<li class="list-group-item"><i class="fa fa-check"></i>Création d'un espace personnel unique</li>
-							<li class="list-group-item"><i class="fa fa-check"></i>Coupon de réduction mensuel sur la Boutique d'une valeur de 10€</li>
-                        </ul>
-                        <div class="panel-footer">
-                            <a class="btn btn-lg btn-block btn-warning" href="Paiement.php">Rentrer dans le cercle</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- /item -->
-
-                <!-- item -->
-                <div class="col-md-4 text-center">
-                    <div class="panel panel-success panel-pricing">
-                        <div class="panel-heading">
-                            <i class="fa fa-user"></i>
-                            <h3>God Member</h3>
-                        </div>
-                        <div class="panel-body text-center">
-                            <p><strong>10€ / 3 Mois</strong></p>
-                        </div>
-                        <ul class="list-group text-center">
-                            <li class="list-group-item"><i class="fa fa-check"></i>Accès Active et VIP</li>
-                            <li class="list-group-item"><i class="fa fa-check"></i>Réception des MAJ "Work in Progress"</li>
-                            <li class="list-group-item"><i class="fa fa-check"></i>Réunion autour du développement du site</li>
-							<li class="list-group-item"><i class="fa fa-check"></i>Support via mail</li>
-							<li class="list-group-item"><i class="fa fa-check"></i>Jeu offert durant les Soldes Steam</li>
-							<li class="list-group-item"><i class="fa fa-check"></i>Livraison d'Oreo mensuelle !</li>
-							<li class="list-group-item"><i class="fa fa-check"></i>Coupon de réduction mensuel sur la Boutique d'une valeur de 15€</li>
-                        </ul>
-                        <div class="panel-footer">
-                            <a class="btn btn-lg btn-block btn-success" href="Paiement.php">Rentrer dans le cercle</a>
-                        </div>
-                    </div>
-				</div>		
-</div>
 </div>
 <?php
 	include("inc/footer.php");
