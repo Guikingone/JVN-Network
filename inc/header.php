@@ -58,7 +58,6 @@
                                 <?php if(isset($_SESSION['auth'])): ?>
                                     <li><a href="logout.php">Se déconnecter</a></li>
                                 <?php else: ?>
-                                    ?>
 								<li>
 									<a href="inscription.php">S'inscrire</a>
 								</li>
@@ -85,7 +84,7 @@
 		</div>
 </div>
 <?php if(isset($_SESSION['flash'])): ?>
-<?php foreach($_SESSION['flash'] as $type => $message); ?>
+<?php foreach($_SESSION['flash'] as $type => $message): ?>
     <div class="alert alert-<?= $type; ?>">
         <?= $message; ?>
     </div>

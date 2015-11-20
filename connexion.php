@@ -1,6 +1,6 @@
 <?php
 	include ('inc/header.php');
-    require_once ('inc/function.php');
+    require('inc/functions.php');
 
     if(!empty($_POST) && !empty($_POST['pseudo']) && $_POST['password']){
         require_once ('inc/pdo.php');
