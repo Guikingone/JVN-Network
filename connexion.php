@@ -1,12 +1,29 @@
 <?php
 	include ('inc/header.php');
-    require('inc/function.php');
+    require_once ('inc/function.php');
+
+    if(!empty($_POST) && !empty($_POST['pseudo']) && $_POST['password']){
+        require_once ('inc/pdo.php');
+
+        $req = $pdo->prepare('SELECT * FROM membres_jvn WHERE (pseudo = :pseudo OR email = :pseudo) AND confirmed_at is NOT NULL');
+        $req->execute(['pseudo' => $_POST['pseudo']]);
+        $user = $req->fetch();
+        if(password_verify($_POST['password'], $user->password)){
+            session_start();
+            $_SESSION['auth'] = $user;
+            $_SESSION['flash']['success'] = "Vous êtes maintenant bien connecté.";
+            header('Location: account.php');
+            exit();
+        }else {
+            $_SESSION['flash']['danger'] = "Identifiant ou mot de passe incorrect !";
+        }
+    }
 ?>
 <div class="container">
 	<div class="row">
 	 <div class="col-lg-12">
 		<br>
-		<fieldset class="text-center">
+		<fieldset class="centered">
 		 <h1>Se connecter :</h1>		
 		 <form action="" method="post">
 		<div class="form-group>">
