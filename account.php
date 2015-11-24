@@ -19,17 +19,29 @@
     }
 ?>
 
-<h1>Bonjour <?= $_SESSION['auth']->pseudo; ?></h1>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <h1>Bonjour <?= $_SESSION['auth']->pseudo; ?></h1>
 
-    <form action="" method="post">
-        <div class="form-group">
-            <input class="form-control" type="password" name="password" placeholder="Changer de mot de passe"/>
+            <form action="" method="post">
+                <div class="form-group">
+                    <input class="form-control" type="password" name="password" placeholder="Changer de mot de passe" />
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="password" name="password_confirm" placeholder="Confirmation du mot de passe" />
+                </div>
+                <button type="submit" class="btn-danger">Changer mon mot de passe</button>
+            </form>
         </div>
-        <div class="form-group">
-            <input class="form-control" type="password" name="password_confirm" placeholder="Confirmation du mot de passe" />
+        <div class="col-lg-6">
+            <h1 class="centered">Envie de plus ?</h1>
+            <p>JVN-Network fonctionne grâce à sa communauté, en vous inscrivant, vous soutenez ce projet, par la suite, vous pouvez souscrire à un abonnement payant qui assurera au site des revenus permettant de gérer l'hébergement, la maintenance, les articles de la Boutique et bien d'autres choses.</p>
+            <p>Le système d'abonnement est expliqué plus en détails via la page suivante.</p>
+            <button type="submit" class="btn btn-danger" href="Abonnement.php">S'abonner</button>
         </div>
-        <button type="submit" class="btn-danger">Changer mon mot de passe</button>
-    </form>
+    </div>
+</div>
 
 
 <?php
