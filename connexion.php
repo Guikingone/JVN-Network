@@ -1,17 +1,27 @@
 <?php
 	include ('inc/header.php');
     require('inc/functions.php');
+    require_once ('inc/pdo.php');
 
+    reconnect_cookie();
+
+    if(isset($_POST['auth'])){
+        header ('Location: account.php');
+        exit();
+    }
     if(!empty($_POST) && !empty($_POST['pseudo']) && $_POST['password']){
-        require_once ('inc/pdo.php');
 
         $req = $pdo->prepare('SELECT * FROM membres_jvn WHERE (pseudo = :pseudo OR email = :pseudo) AND confirmed_at is NOT NULL');
         $req->execute(['pseudo' => $_POST['pseudo']]);
         $user = $req->fetch();
         if(password_verify($_POST['password'], $user->password)){
-            session_start();
             $_SESSION['auth'] = $user;
             $_SESSION['flash']['success'] = "Vous êtes maintenant bien connecté.";
+    if($_POST['remember']){
+            $remember_token = str_random(250);
+            $pdo->prepare('UPDATE membres_jvn SET remember_token = ? WHERE id = ?')->execute([$remember_token, $user->id]);
+            setcookie('remember', $user->id . '==' . $remember_token . sha1($user->id . 'ratonlaveursdudimanchematinchezlessioux'), time() * 60 * 60 * 24 * 7);    
+        }
             header('Location: account.php');
             exit();
         }else {
@@ -44,7 +54,7 @@
 		<button type="submit" class="btn btn-danger">Se connecter
 		</button>
 		</form>
-		<fieldset>
+		</fieldset>
 	</p>
 	 </div>
 	</div>

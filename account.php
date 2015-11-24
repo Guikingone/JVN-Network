@@ -28,7 +28,7 @@
         <div class="form-group">
             <input class="form-control" type="password" name="password_confirm" placeholder="Confirmation du mot de passe" />
         </div>
-        <button type="btn btn-danger">Changer mon mot de passe</button>
+        <button type="submit" class="btn-danger">Changer mon mot de passe</button>
     </form>
 
 
