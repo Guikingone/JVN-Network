@@ -71,7 +71,7 @@
 							<a href="Blog.php">Blog</a>
 						</li>
 						<li>
-							<a href="Commu.php">Communauté</a>
+							<a href="#Commu.php">Communauté</a>
 						</li>
 						<li>
 							<a href="#Forums.php">Forums</a>
