@@ -24,6 +24,9 @@
 		<!-- Normalize -->
 		<link rel="stylesheet" href="../css/normalize.css">
 
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../css/font-awesome-4.5.0/font-awesome.css" />
+
 		<!-- Custom Fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 		<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>

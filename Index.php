@@ -155,7 +155,7 @@
 
 		<div class="container">
 			<div class="row">
-				<div class="col-md-4">
+				<div class="col-md-4 hidden-xs">
 					<!-- begin panel group -->
 					<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
@@ -234,7 +234,7 @@
 
 				</div> <!-- /col-md-4 -->
 
-				<div class="col-md-8">
+				<div class="col-md-8 hidden-xs">
 					<!-- begin macbook pro mockup -->
 					<div class="md-macbook-pro md-glare">
 						<div class="md-lid">

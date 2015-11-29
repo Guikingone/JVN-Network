@@ -23,7 +23,7 @@ if (isset($_GET['id']))
 
 else
 {
-    echo '<h2 style="text-align:center">Liste des 5 news publiées récemment</h2>';
+    echo '<h2 class="text-center">Les 5 dernières news publiées</h2>';
     
     foreach ($manager->getList(0, 5) as $news)
     {
