@@ -41,6 +41,29 @@
             <button type="submit" class="btn btn-danger" href="Abonnement.php">S'abonner</button>
         </div>
     </div>
+    <div class="row">
+        <div class="col-lg-12">
+           <!-- News -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <!-- Fonctionnalitées -->
+            <div class="row">
+                <div class="col-lg-4">
+                    <!-- Formulaire Soutien technique -->
+                    <form action="" method="post">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="pseudo" />
+                        </div>
+                        <div class="form-control">
+                            <input class="form-control" type="text" name="message" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 

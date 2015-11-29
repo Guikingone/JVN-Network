@@ -6,7 +6,7 @@
 		<header>
 			<div class="container">
 				<div class="row">
-				<div class="centered">
+				<div class="text-center">
 					<!-- Blog Principal -->
 				</div>
 				</div>

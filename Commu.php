@@ -69,7 +69,7 @@
 							<li class="list-group-item"><i class="fa fa-check"></i>Coupon de réduction mensuel sur la Boutique d'une valeur de 10€</li>
                         </ul>
                         <div class="panel-footer">
-                            <a class="btn btn-lg btn-block btn-warning" href="Paiement.php">Rentrer dans le cercle</a>
+                            <a class="btn btn-lg btn-block btn-warning" href="#Paiement.php">Lancement en 2016</a>
                         </div>
                     </div>
                 </div>
@@ -95,7 +95,7 @@
 							<li class="list-group-item"><i class="fa fa-check"></i>Coupon de réduction mensuel sur la Boutique d'une valeur de 15€</li>
                         </ul>
                         <div class="panel-footer">
-                            <a class="btn btn-lg btn-block btn-success" href="Paiement.php">Rentrer dans le cercle</a>
+                            <a class="btn btn-lg btn-block btn-success" href="#Paiement.php">Lancement en 2016</a>
                         </div>
                     </div>
 				</div>
@@ -119,7 +119,7 @@
 							<li class="list-group-item"><i class="fa fa-check"></i>Article au choix offert dans la Boutique</li>
                         </ul>
                         <div class="panel-footer">
-                            <a class="btn btn-lg btn-block btn-danger" href="Inscription.php">Rentrer dans le cercle</a>
+                            <a class="btn btn-lg btn-block btn-danger" href="#Paiement.php">Lancement en 2016</a>
                         </div>
                     </div>
                 </div>
@@ -176,23 +176,6 @@
 
             </div>
         </div>
-	 </section>
-    <!-- /Plans -->
-
-	
-<!-- ========== Javascript ========== -->
-		
-	<!-- jQuery -->
-	<script src="js/vendor/jquery-1.11.3.min.js"
-
-	<!-- Modernizr -->
-	<script src="js/vendor/modernizr-2.8.3.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/Bootstrap/bootstrap.min.js"></script>
-	
-	<!-- Core JS -->
-	<script src="js/main.js"></script>
-         
-</body>
-</html>
+<?php
+    include ('inc/footer.php');
+?>
