@@ -1,6 +1,7 @@
 <?php
 
-include_once('modele/blog/getèbillets.php');
+include_once('modele/blog/get_billets.php');
+
 $billets = get_billets(0, 5);
 
 foreach($billets as $cle => $billet){
