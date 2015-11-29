@@ -5,7 +5,7 @@ class NewsManagerPDO extends NewsManager{
     protected $db;
 
     public function __construct(PDO $db){
-        $this->_db = $db;
+        $this->db = $db;
     }
 
       protected function add(News $news)
@@ -19,41 +19,32 @@ class NewsManagerPDO extends NewsManager{
     $requete->execute();
   }
   
-  /**
-   * @see NewsManager::count()
-   */
+
   public function count()
   {
-    return $this->_db->query('SELECT COUNT(*) FROM news')->fetchColumn();
+    return $this->db->query('SELECT COUNT(*) FROM news')->fetchColumn();
   }
-  
-  /**
-   * @see NewsManager::delete()
-   */
+ 
+
   public function delete($id)
   {
     $this->db->exec('DELETE FROM news WHERE id = '.(int) $id);
   }
   
-  /**
-   * @see NewsManager::getList()
-   */
+
   public function getList($debut = -1, $limite = -1)
   {
     $sql = 'SELECT id, auteur, titre, contenu, dateAjout, dateModif FROM news ORDER BY id DESC';
     
-    // On vérifie l'intégrité des paramètres fournis.
-    if ($debut != -1 || $limite != -1)
-    {
+    if ($debut != -1 || $limite != -1){
       $sql .= ' LIMIT '.(int) $limite.' OFFSET '.(int) $debut;
     }
     
-    $requete = $this->_db->query($sql);
+    $requete = $this->db->query($sql);
     $requete->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'News');
     
     $listeNews = $requete->fetchAll();
 
-    // On parcourt notre liste de news pour pouvoir placer des instances de DateTime en guise de dates d'ajout et de modification.
     foreach ($listeNews as $news)
     {
       $news->setDateAjout(new DateTime($news->dateAjout()));
@@ -65,9 +56,7 @@ class NewsManagerPDO extends NewsManager{
     return $listeNews;
   }
   
-  /**
-   * @see NewsManager::getUnique()
-   */
+
   public function getUnique($id)
   {
     $requete = $this->db->prepare('SELECT id, auteur, titre, contenu, dateAjout, dateModif FROM news WHERE id = :id');
@@ -83,10 +72,8 @@ class NewsManagerPDO extends NewsManager{
     
     return $news;
   }
-  
-  /**
-   * @see NewsManager::update()
-   */
+
+
   protected function update(News $news)
   {
     $requete = $this->db->prepare('UPDATE news SET auteur = :auteur, titre = :titre, contenu = :contenu, dateModif = NOW() WHERE id = :id');

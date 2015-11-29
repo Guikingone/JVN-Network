@@ -141,11 +141,11 @@ textarea {
 			letter-spacing: 1px;
 			color: #d04040;
 		}
-		.navbar-default .nav li a:hover,
-		.navbar-default .nav li a:focus {
-			outline: 0;
-			color: #9d9696;
-		}
+            .navbar-default .nav li a:hover,
+            .navbar-default .nav li a:focus {
+                outline: 0;
+                color: #9d9696;
+            }
 
 		.navbar-default .navbar-nav>.active>a {
 			border-radius: 0;

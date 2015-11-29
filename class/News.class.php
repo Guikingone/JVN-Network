@@ -1,34 +1,35 @@
 <?php
     
 class News {
-    protected $erreurs = [],
-    $id, 
-    $auteur,
-    $titre, 
-    $contenu,
-    $dateAjout, 
-    $dateModif;
+
+    protected   $erreurs = [],
+                $id, 
+                $auteur,
+                $titre, 
+                $contenu,
+                $dateAjout, 
+                $dateModif;
 
     const AUTEUR_INVALIDE = 1;
     const TITRE_INVALIDE = 2;
     const CONTENU_INVALIDE = 3;
 
 
-    public function __construct($valeurs = []) {
+    public function __construct($valeurs = []){
     
     if(!empty($valleurs)){
     
         $this->hydrate($valeurs);
-    }
+       }
     }
 
 
     public function hydrate($donnees) {
 
-        foreach($donnees as $atrribut => $valeur){
+        foreach($donnees as $attribut => $valeur){
             $methode = 'set' .ucfirst($attribut);
 
-            if(iscallable([$this->$methode])){
+            if(is_callable([$this, $methode])){
             $this->$methode($valeur);
             }
         }
@@ -43,7 +44,7 @@ class News {
         return !(empty($this->auteur) || empty($this->titre) || empty($this->contenu));
     }
 
-    public function setID($id){
+    public function setId($id){
         $this->id = (int) $id;
     }
 
@@ -71,11 +72,11 @@ class News {
         }
     }
 
-    public function setDatAjout(DateTime $dateAjout){
+    public function setDateAjout(DateTime $dateAjout){
         $this->dateAjout = $dateAjout;
     }
 
-    public function setDateModif($dateModif){
+    public function setDateModif(DateTime $dateModif){
         $this->dateModif = $dateModif;
     }
 
@@ -84,7 +85,7 @@ class News {
     }
 
     public function id(){
-        return $this-$id;
+        return $this->id;
     }
 
     public function auteur(){

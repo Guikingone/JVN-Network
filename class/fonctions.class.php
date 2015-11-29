@@ -24,7 +24,7 @@ class fonctions {
         }
     }
 
-    public function reonnect_cookie(){
+    public function reconnect_cookie(){
         if(session_status() == PHP_SESSION_NONE){
             session_start();
         }

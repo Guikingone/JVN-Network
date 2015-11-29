@@ -22,5 +22,4 @@ abstract class NewsManager {
     }
 
     abstract protected function update(News $news);
- 
 }
