@@ -64,7 +64,7 @@ class News {
     }
 
     public function setContenu($contenu){
-        if(!is_string($contenu) || empty($contenu){
+        if(!is_string($contenu) || empty($contenu)){
            $this->erreurs[] = self::CONTENU_INVALIDE;
         }else {
             $this->contenu = $contenu;
@@ -79,7 +79,7 @@ class News {
         $this->dateModif = $dateModif;
     }
 
-    public function erreur(){
+    public function erreurs(){
         return $this->erreurs;
     }
 
@@ -107,4 +107,3 @@ class News {
         return $this->dateModif;
     }
 }
-?>
