@@ -9,6 +9,24 @@
 	</div>
 </div>
 
+<!-- Menu Responsive -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-4">
+                    </div>
+                    <div class="col-lg-4">
+                    </div>
+                    <div class="col-lg-4">
+                    </div>
+                    <div class="col-lg-4">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 <!-- Menu présentation -->
     <div class="row">
         <div class="col-lg-12 hidden-xs">
@@ -51,14 +69,12 @@
     <br />
 
 <!-- Panier -->
-<div class="container">
     <div class="row">
         <div class="col-xs-12 text-center">
             <a href="Panier.php"<button type="submit" class="btn btn-danger" id="panier-xs">Voir mon panier</button></a>
         </div>
     </div>
 </div>
-
 <?php
 	include ('inc/footer.php');
 ?>

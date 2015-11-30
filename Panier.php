@@ -5,7 +5,7 @@
 <!-- Panier -->
 <div class="container">
     <div class="row">
-        <div class="col-lg-12 hidden-xs">
+        <div class="col-lg-12">
             <table class="table table-hover">
                 <thead>
                     <tr>
