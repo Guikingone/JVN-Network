@@ -15,6 +15,7 @@
             <div class="col-lg-12">
                 <div class="row">
                     <div class="col-lg-4">
+                        <h2>Nom de l'article</h2>
                     </div>
                     <div class="col-lg-4">
                     </div>

@@ -36,9 +36,10 @@
         </div>
         <div class="col-lg-6">
             <h1 class="centered">Envie de plus ?</h1>
-            <p>JVN-Network fonctionne grâce à sa communauté, en vous inscrivant, vous soutenez ce projet, par la suite, vous pouvez souscrire à un abonnement payant qui assurera au site des revenus permettant de gérer l'hébergement, la maintenance, les articles de la Boutique et bien d'autres choses.</p>
+            <p>JVN-Network fonctionne grâce à sa communauté, en vous inscrivant, vous soutenez ce projet, par la suite, vous pouvez souscrire à un abonnement payant qui assurera au site des revenus
+             permettant de gérer l'hébergement, la maintenance, les articles de la Boutique et bien d'autres choses.</p>
             <p>Le système d'abonnement est expliqué plus en détails via la page suivante.</p>
-            <button type="submit" class="btn btn-danger" href="Abonnement.php">S'abonner</button>
+            <a href="Abonnement.php"><button type="submit" class="btn btn-danger">S'abonner</button></a>
         </div>
     </div>
     <div class="row">
@@ -52,7 +53,7 @@
             <div class="row">
                 <div class="col-lg-4">
                     <!-- Formulaire Soutien technique -->
-                    <form action="" method="post">
+                    <form action="inc/fonc_php/send_mail_soutien.php" method="post">
                         <div class="form-group">
                             <input class="form-control" type="text" name="pseudo" />
                         </div>
@@ -64,9 +65,7 @@
             </div>
         </div>
     </div>
-</div>
-
-
+</div><!-- Fin Container -->
 <?php
     include ('inc/footer.php');
 ?>
