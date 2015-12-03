@@ -53,6 +53,7 @@
             <div class="row">
                 <div class="col-lg-4">
                     <!-- Formulaire Soutien technique -->
+                    <h2 class="text-center">Besoin de soutien ?</h2>
                     <form action="inc/fonc_php/send_mail_soutien.php" method="post">
                         <div class="form-group">
                             <input class="form-control" type="text" name="pseudo" />
@@ -61,6 +62,13 @@
                             <input class="form-control" type="text" name="message" />
                         </div>
                     </form>
+                </div>
+                <div class="col-lg-4">
+                    <!-- Messagerie -->
+                    <h2 class="text-center">Votre messagerie</h2>
+                </div>
+                <div class="col-lg-4">
+
                 </div>
             </div>
         </div>

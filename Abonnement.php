@@ -13,7 +13,7 @@
             <br />
             <p>Avec un compte VIP, vous payez 5€ tout les 3 mois, sur une année, cela donne 20E, pour ce prix, vous obtenez un accès privilégié sur les contenus à venir sur le site, de plus, vous pouvez (dés que cela sera possible), obtenir un retour sur investissement, nous vous paierons une part des revenus du site (le pourcentage est encore en débat) pour vous montrer notre attachement à votre dévouement.</p>
             <p>Pour les membres qui en veulent toujours plus, nous avons conçu l'abonnement God, ce dernier est un petit peu plus cher, pour 10€ tout les 3 mois, vous obtenenez un poste directement au sein de l'Equipe, pour vous remercier, nous vous offrons la possibilité de recevoir les dernières builds du site, de participer au réunion via Skype pour le futur du site, de recevoir un jeu gratuitement sur Steam tout les 3 mois et pourquoi pas des Oreo mensuellement, de plus, vous pouvez contacter l'Equipe via mail pour un support rapide (réponse sous 24H maximum) et personnel, de plus, un coupon plus important vous attend.</p>
-            <p>Tout ceci expliqué, nous devons vous avouer quelque chose, ce site nous est cher, cher dans l'âme et dans le coeur, nous le faisons vivre grâce à vous et nous devions vous faire participer dignement à tout cela, les abonnements ont vu le jour dés le départ de l'aventure, non pas par envie de vous faire casquer pour rien mais bien parce que nous voulions vous investir plus profondément dans ce projet, aujourdh'ui, nous vous donnons les clés de JVN-Network, devenez plus que membre et créez la légende de JVN, ce choix est vôtre, on se retrouve de l'autre côté.</p>
+            <p>Tout ceci expliqué, nous devons vous avouer quelque chose, ce site nous est cher, cher dans l'âme et dans le coeur, nous le faisons vivre grâce à vous et nous devions vous faire participer dignement à tout cela, les abonnements ont vu le jour dés le départ de l'aventure, non pas par envie de vous faire casquer pour rien mais bien parce que nous voulions vous investir plus profondément dans ce projet, aujourd'hui, nous vous donnons les clés de JVN-Network, devenez plus que membre et créez la légende de JVN, ce choix est vôtre, on se retrouve de l'autre côté.</p>
             <p>L'Equipe</p>
         </div>
         <div class="col-lg-6">
@@ -37,7 +37,7 @@
                     <li class="list-group-item"><i class="fa fa-check"></i>Coupon de réduction mensuel sur la Boutique d'une valeur de 10€</li>
                 </ul>
                 <div class="panel-footer">
-                    <a class="btn btn-lg btn-block btn-warning" href="Paiement.php">Rentrer dans le cercle</a>
+                    <a class="btn btn-lg btn-block btn-warning" href="#Paiement.php">Lancement en 2016</a>
                 </div>
             </div>
 
@@ -60,7 +60,7 @@
                     <li class="list-group-item"><i class="fa fa-check"></i>Coupon de réduction mensuel sur la Boutique d'une valeur de 15€</li>
                 </ul>
                 <div class="panel-footer">
-                    <a class="btn btn-lg btn-block btn-success" href="Paiement.php">Rentrer dans le cercle</a>
+                    <a class="btn btn-lg btn-block btn-success" href="#Paiement.php">Lancement en 2016</a>
                 </div>
             </div>
 
