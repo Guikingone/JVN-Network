@@ -31,7 +31,7 @@
 ?>
 <div class="container">
 	<div class="row">
-	 <div class="col-lg-12">
+	 <div class="col-lg-12 text-center">
 		<br>
 		<fieldset class="centered">
 		 <h1>Se connecter :</h1>		
