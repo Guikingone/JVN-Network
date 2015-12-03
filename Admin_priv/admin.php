@@ -1,5 +1,5 @@
 <?php
-require '../class/autoload.class.php';
+require '../lib/autoload.class.php';
 
 $db = DBFactory::getMysqlConnexionWithPDO();
 $manager = new NewsManagerPDO($db);
