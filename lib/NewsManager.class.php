@@ -15,7 +15,7 @@ abstract class NewsManager {
     public function save(News $news){
     
         if($news->isValid()){
-            $news->isNews() ? $this->add($news) : $this->update($news);
+            $news->isNew() ? $this->add($news) : $this->update($news);
         }else {
             throw new RuntimeException('La news doit être valide pour être enregistrée');
         }

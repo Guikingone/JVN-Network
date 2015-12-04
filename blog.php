@@ -23,7 +23,7 @@ if (isset($_GET['id']))
 
 else
 {
-    echo '<h2 class="text-center">Les 5 dernières news publiées</h2>';
+    echo '<h2 class="text-center">Le blog de l\'Equipe</h2>';
     
     foreach ($manager->getList(0, 5) as $news)
     {
@@ -40,8 +40,8 @@ else
             $contenu = $debut;
         }
         
-        echo '<h4><a href="?id=', $news->id(), '">', $news->titre(), '</a></h4>', "\n",
-        '<p>', nl2br($contenu), '</p>';
+        echo '<h4 class="text-center"><a href="?id=', $news->id(), '">', $news->titre(), '</a></h4>', "\n",
+        '<p class="text-center">', nl2br($contenu), '</p>';
     }
 }
 

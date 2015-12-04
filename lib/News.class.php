@@ -17,7 +17,7 @@ class News {
 
     public function __construct($valeurs = []){
     
-    if(!empty($valleurs)){
+    if(!empty($valeurs)){
     
         $this->hydrate($valeurs);
        }

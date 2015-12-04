@@ -4,14 +4,14 @@ require '../lib/autoload.class.php';
 $db = DBFactory::getMysqlConnexionWithPDO();
 $manager = new NewsManagerPDO($db);
 
-if (isset($_GET['modifier']))
+if (isset($_POST['modifier']))
 {
-    $news = $manager->getUnique((int) $_GET['modifier']);
+    $news = $manager->getUnique((int) $_POST['modifier']);
 }
 
-if (isset($_GET['supprimer']))
+if (isset($_POST['supprimer']))
 {
-    $manager->delete((int) $_GET['supprimer']);
+    $manager->delete((int) $_POST['supprimer']);
     $message = 'La news a bien été supprimée !';
 }
 
