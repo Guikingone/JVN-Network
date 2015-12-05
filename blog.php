@@ -1,12 +1,10 @@
 <?php
+include ('inc/header.php');
 require 'lib/autoload.class.php';
 
 $db = DBFactory::getMysqlConnexionWithPDO();
 $manager = new NewsManagerPDO($db);
 
-include ('inc/header.php');
-?>
-<?php
 if (isset($_GET['id']))
 {
     $news = $manager->getUnique((int) $_GET['id']);
@@ -23,7 +21,7 @@ if (isset($_GET['id']))
 
 else
 {
-    echo '<h2 class="text-center">Le blog de l\'Equipe</h2>';
+    echo '<h2 class="text-center">Le blog de l\'Equipe</h2><br>';
     
     foreach ($manager->getList(0, 5) as $news)
     {

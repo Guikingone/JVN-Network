@@ -23,18 +23,13 @@
             </form>
             <?php
                 $pdo = new PDO('mysql:host=localhost;dbname=jvn-network', 'root', '');
-                $reponse = $pdo->query('SELECT pseudo, message FROM chat ORDER BY ID DESC LIMIT 0, 8');
+                $reponse = $pdo->query('SELECT pseudo, message FROM chat ORDER BY ID DESC LIMIT 0, 10');
 
                 while($donnees = $reponse->fetch()){
-                    echo '<br><p><strong>' . htmlspecialchars($donnees['pseudo']) . 
-                    '</strong> : ' . htmlspecialchars($donnees['message']) . '</p>';
+                    echo '<p><strong>' . htmlspecialchars($donnees['pseudo']) . '</strong>: ' . htmlspecialchars($donnees['message']) . '</p>';
                 }
                 $reponse->closeCursor();
-            ?>
-            <br />
-            <br />
-            <br />
-            <?php 
+
                 $req = $pdo->prepare('INSERT INTO chat (pseudo, message) VALUES (?, ?)');
                 $req->execute(array($_POST['pseudo'], $_POST['message']));
             ?>

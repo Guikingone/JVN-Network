@@ -4,14 +4,14 @@ require '../lib/autoload.class.php';
 $db = DBFactory::getMysqlConnexionWithPDO();
 $manager = new NewsManagerPDO($db);
 
-if (isset($_POST['modifier']))
+if(isset($_GET['modifier']))
 {
-    $news = $manager->getUnique((int) $_POST['modifier']);
+    $news = $manager->getUnique($_POST['id']);
 }
 
-if (isset($_POST['supprimer']))
+if (isset($_GET['supprimer']))
 {
-    $manager->delete((int) $_POST['supprimer']);
+    $manager->delete($_POST['id']);
     $message = 'La news a bien été supprimée !';
 }
 
@@ -104,13 +104,14 @@ if (isset($_POST['auteur']))
 
                 <p class="text-center">Il y a actuellement <?= $manager->count() ?> news. En voici la liste :</p>
 
-                <table>
+                <table class="table">
                     <tr><th>Auteur</th><th>Titre</th><th>Date d'ajout</th><th>Dernière modification</th><th>Action</th></tr>
                     <?php
-foreach ($manager->getList() as $news)
-{
-    echo '<tr><td>', $news->auteur(), '</td><td>', $news->titre(), '</td><td>', $news->dateAjout()->format('d/m/Y à H\hi'), '</td><td>', ($news->dateAjout() == $news->dateModif() ? '-' : $news->dateModif()->format('d/m/Y à H\hi')), '</td><td><a href="?modifier=', $news->id(), '">Modifier</a> | <a href="?supprimer=', $news->id(), '">Supprimer</a></td></tr>', "\n";
-}
+                        foreach ($manager->getList() as $news)
+                        {
+                            echo '<tr><td>', $news->auteur(), '</td><td>', $news->titre(), '</td><td>', $news->dateAjout()->format('d/m/Y à H\hi'), '</td><td>', ($news->dateAjout() == $news->dateModif() ? '-' : $news->dateModif()->format('d/m/Y à H\hi')), 
+                            '</td><td><a href="?modifier=', $news->id(), '"><button class="btn">Modifier</button></a> | <a href="?supprimer=', $news->id(), '"><button class="btn">Supprimer</button></a></td></tr>', "\n";
+                        }
                     ?>
                 </table>
             </div>

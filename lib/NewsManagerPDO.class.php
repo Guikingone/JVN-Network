@@ -8,8 +8,7 @@ class NewsManagerPDO extends NewsManager{
         $this->db = $db;
     }
 
-      protected function add(News $news)
-  {
+    protected function add(News $news){
     $requete = $this->db->prepare('INSERT INTO news SET auteur = :auteur, titre = :titre, contenu = :contenu, dateAjout = NOW(), dateModif = NOW()');
     
     $requete->bindValue(':titre', $news->titre());
@@ -20,20 +19,17 @@ class NewsManagerPDO extends NewsManager{
   }
   
 
-  public function count()
-  {
+  public function count(){
     return $this->db->query('SELECT COUNT(*) FROM news')->fetchColumn();
   }
  
 
-  public function delete($id)
-  {
+  public function delete($id){
     $this->db->exec('DELETE FROM news WHERE id = '.(int) $id);
   }
   
 
-  public function getList($debut = -1, $limite = -1)
-  {
+  public function getList($debut = -1, $limite = -1){
     $sql = 'SELECT id, auteur, titre, contenu, dateAjout, dateModif FROM news ORDER BY id DESC';
     
     if ($debut != -1 || $limite != -1){
@@ -57,8 +53,7 @@ class NewsManagerPDO extends NewsManager{
   }
   
 
-  public function getUnique($id)
-  {
+  public function getUnique($id){
     $requete = $this->db->prepare('SELECT id, auteur, titre, contenu, dateAjout, dateModif FROM news WHERE id = :id');
     $requete->bindValue(':id', (int) $id, PDO::PARAM_INT);
     $requete->execute();
@@ -74,8 +69,7 @@ class NewsManagerPDO extends NewsManager{
   }
 
 
-  protected function update(News $news)
-  {
+  protected function update(News $news){
     $requete = $this->db->prepare('UPDATE news SET auteur = :auteur, titre = :titre, contenu = :contenu, dateModif = NOW() WHERE id = :id');
     
     $requete->bindValue(':titre', $news->titre());
