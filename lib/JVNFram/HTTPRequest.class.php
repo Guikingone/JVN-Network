@@ -31,7 +31,7 @@ class HTTPRequest extends ApplicationComponent{
         return isset($_POST[$key]);
     }
 
-    public function requesURL($key){
+    public function requestURL($key){
         return $_SERVER['REQUEST_URL'];
     }
 }

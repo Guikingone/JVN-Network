@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<routes>
+  <route url="/news-(.+)-([0-9]+)\.html" module="News" action="index" vars="slug,id"></route>
+</routes>
