@@ -1,8 +1,3 @@
-<?php
-    if(session_status() == PHP_SESSION_NONE){
-        session_start();
-    }
-?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -16,16 +11,16 @@
 		<title>JVN-Network.fr / Là où la communauté prend tout son sens</title>
 
 		<!-- Bootstrap Core CSS -->
-		<link href="css/Bootstrap/bootstrap.css" rel="stylesheet">
+		<link href="/css/Bootstrap/bootstrap.css" rel="stylesheet">
 
 		<!-- Custom CSS -->
-		<link href="css/main.css" rel="stylesheet">
+		<link href="/css/main.css" rel="stylesheet">
 
 		<!-- Normalize -->
-		<link rel="stylesheet" href="../css/normalize.css">
+		<link rel="stylesheet" href="/css/normalize.css">
 
         <!-- Font Awesome -->
-        <link rel="stylesheet" href="../css/font-awesome-4.5.0/font-awesome.css" />
+        <link rel="stylesheet" href="/css/font-awesome-4.5.0/font-awesome.css" />
 
 		<!-- Custom Fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
@@ -51,23 +46,27 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand page-scroll" href="index.php">Accueil</a>
+					<a class="navbar-brand page-scroll" href="/">Accueil</a>
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
 							<li class="dropdown">
 							<a data-toggle="dropdown" href="#">Membres<b class="caret"></b></a>
 							<ul class="dropdown-menu">
-                                <?php if(isset($_SESSION['auth'])): ?>
-                                    <li><a href="logout.php">Se déconnecter</a></li>
-                                <?php else: ?>
+                                <?php if($user->isAuthenticated()) {?>
+                                <li>
+                                    <a href="/Admin_priv/">Admin</a>
+                                </li>
+                                <li>
+                                    <a href="/Admin_priv/news-insert.html">Ajouter une news</a>
+                                </li>
+                                <?php }?>
 								<li>
 									<a href="inscription.php">S'inscrire</a>
 								</li>
 								<li>
 									<a href="connexion.php">Se Connecter</a>
 								</li>
-                                <?php endif;?>
 							</ul>
 							</li>
 						<li>
@@ -86,12 +85,11 @@
 				</div>
 		</div>
 </div>
-<?php if(isset($_SESSION['flash'])): ?>
-<?php foreach($_SESSION['flash'] as $type => $message): ?>
-    <div class="alert alert-<?= $type; ?>">
-        <?= $message; ?>
+<div class="container">
+    <div class="row">
+        <?php if($user->hasFlash()) echo '<p class="text-center">'>, $user->getFlash(), <'/p>'?>
     </div>
-<?php endforeach; ?>
-<?php unset ($_SESSION['flash']);?>
-<?php endif;?>
+</div>
+</body>
+</html>
 	
