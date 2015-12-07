@@ -6,11 +6,15 @@ abstract class Application{
     protected $httpRequest;
     protected $httpResponse;
     protected $name;
+    protected $user;
+    protected $config;
 
     public function __construct(){
         $this->httpRequest = new HTTPRequest($this);
         $this->httpResponse = new HTTPResponse($this);
         $this->name = '';
+        $this->user = new User($this);
+        $this->config = new Config($this);
     }
 
     public function getController(){

@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<definitions>
+  <define var="nombre_news" value="5" />
+</definitions>
