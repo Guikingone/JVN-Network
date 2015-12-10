@@ -55,18 +55,22 @@
 							<ul class="dropdown-menu">
                                 <?php if($user->isAuthenticated()) {?>
                                 <li>
+                                    <a href="">Mon Compte</a>
+                                </li>
+                                <li>
                                     <a href="/Admin_priv/">Admin</a>
                                 </li>
                                 <li>
                                     <a href="/Admin_priv/news-insert.html">Ajouter une news</a>
                                 </li>
-                                <?php }?>
+                                <?php }else {?>
 								<li>
 									<a href="inscription.php">S'inscrire</a>
 								</li>
 								<li>
 									<a href="connexion.php">Se Connecter</a>
 								</li>
+                                <?php }?>
 							</ul>
 							</li>
 						<li>
@@ -87,7 +91,7 @@
 </div>
 <div class="container">
     <div class="row">
-        <?php if($user->hasFlash()) echo '<p class="text-center">'>, $user->getFlash(), <'/p>'?>
+        <?php if($user->hasFlash()) echo '<p class="text-center">>', $user->getFlash(), '</p>' ?>
     </div>
 </div>
 </body>
