@@ -24,16 +24,16 @@ if (isset($_POST['auteur']))
         'contenu' => $_POST['contenu']
       ]
     );
-    
+
     if (isset($_POST['id']))
     {
         $news->setId($_POST['id']);
     }
-    
+
     if ($news->isValid())
     {
         $manager->save($news);
-        
+
         $message = $news->isNew() ? 'La news a bien été ajoutée !' : 'La news a bien été modifiée !';
     }
     else
@@ -55,7 +55,7 @@ if (isset($_POST['auteur']))
         <div class="row">
             <div class="col-lg-12">
                 <h3 class="text-center">Bienvenue sur la page d'administration</h3>
-                <p class="text-center">Ici, vous pourrez administrer le blog de l'Equipe et ajouter les billets en temps réel, ce panneau de configuration est encore imparfait et sera amené 
+                <p class="text-center">Ici, vous pourrez administrer le blog de l'Equipe et ajouter les billets en temps réel, ce panneau de configuration est encore imparfait et sera amené
                 à s'améliorer de par la suite, veuillez donc comprendre si certains soucis surviennent, vous pouvez nous contacter à cette adresse <em>equipe_support_technique@jvn-network.fr</em> à tout moment, précisez dans l'objet du mail ceci :
                 "JVN-TEAM\\ Votre soucis || Date et Heure de l'erreur ou soucis //JVN-TEAM" afin que ces mails soient traités en priorités.</p>
                 <p class="text-center">Vous pouvez ajouter, supprimer et modifier une news via ce panneau, soyez prudent durant chaque étape et vérifier chaque modification et suppresion avant de valider !</p>
@@ -109,7 +109,7 @@ if (isset($_POST['auteur']))
                     <?php
                         foreach ($manager->getList() as $news)
                         {
-                            echo '<tr><td>', $news->auteur(), '</td><td>', $news->titre(), '</td><td>', $news->dateAjout()->format('d/m/Y à H\hi'), '</td><td>', ($news->dateAjout() == $news->dateModif() ? '-' : $news->dateModif()->format('d/m/Y à H\hi')), 
+                            echo '<tr><td>', $news->auteur(), '</td><td>', $news->titre(), '</td><td>', $news->dateAjout()->format('d/m/Y à H\hi'), '</td><td>', ($news->dateAjout() == $news->dateModif() ? '-' : $news->dateModif()->format('d/m/Y à H\hi')),
                             '</td><td><a href="?modifier=', $news->id(), '"><button class="btn">Modifier</button></a> | <a href="?supprimer=', $news->id(), '"><button class="btn">Supprimer</button></a></td></tr>', "\n";
                         }
                     ?>
