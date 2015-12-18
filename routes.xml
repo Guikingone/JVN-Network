@@ -2,4 +2,5 @@
 <routes>
   <route url="/" module="News" action="index" ></route>
   <route url="/news-([0-9]+)\.html" module="News" action="show" vars="id"></route>
+  <route urle="/commenter-([0-9]+)\.html" module="News" action="insertComment" vars="news"></route>
 </routes>

@@ -3,11 +3,11 @@ session_start();
   require ('inc/header.php');
   require_once ('inc/functions.php');
   require ('inc/Pdo.php');
-	
+
 if(!empty($_POST)){
-	
+
 	$errors = array();
-	
+
 	if(empty($_POST['pseudo']) || !preg_match('/^[a-zA-Z0-9_]+$/', $_POST['pseudo'])){
 		$errors["pseudo"] = "Votre pseudonyme n'est pas valide.";
 	}else {
@@ -16,10 +16,10 @@ if(!empty($_POST)){
     $user = $req->fetch();
     	if($user){
     	$errors['pseudo'] = "Ce pseudo est déjà pris !";
-    
+
 	  }
   }
-	
+
 	if(empty($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
 		$errors['email'] = "Votre adresse email n'est pas valide.";
 	}else {
@@ -28,14 +28,14 @@ if(!empty($_POST)){
     $user = $req->fetch();
 		if($user){
 		$errors['email'] = "Cette adresse email est déjà utilisée !";
-    
+
 	  }
 	}
-	
+
 	if(empty($_POST['password']) || $_POST['password'] != $_POST['password_confirm']){
 		$errors['password'] = "Vous devez rentrer un mot de passe valide.";
 	}
-	
+
 	if(empty($errors)){
 
 	$req = $pdo->prepare("INSERT INTO membres_jvn SET pseudo = ?, password = ?, email = ?, confirmation_token = ?");
@@ -58,7 +58,7 @@ if(!empty($_POST)){
 	<br />
 	  <fieldset class="text-center">
 		 <h1>S'inscrire</h1>
-		 
+
 	 <?php if(!empty($errors)): ?>
       <div class="alert alert-danger">
         <p>Vous n'avez pas rempli le formulaire correctement :</p>
@@ -69,24 +69,24 @@ if(!empty($_POST)){
         </ul>
       </div>
       <?php endif; ?>
-	  
+
 		<form action="" method="post">
 		<div class="form-group>">
 			<label>Votre Pseudonyme :
 			  <input type="text" name="pseudo" class="form-control" placeholder="11 caractères max"/>
 			</label>
 		</div>
-		<div class="form-group">	
+		<div class="form-group">
 			<label>Votre adresse email :
 				<input type="email" id="email" name="email" class="form-control"/>
 			</label>
 		</div>
-		<div class="form-group">	
+		<div class="form-group">
 			<label>Mot de passe :
 				<input type="password" name="password" class="form-control"/>
 			</label>
 		</div>
-		<div class="form-group">	
+		<div class="form-group">
 			<label>Confirmer votre mot de passe :
 				<input type="password" name="password_confirm" class="form-control"/>
 			</label>

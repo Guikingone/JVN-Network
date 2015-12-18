@@ -40,15 +40,10 @@ if(isset($_POST['auteur'])){
 </div>
 
 <?php
-
-foreach($message as $manager_tchat){
-  $manager_tchat->add();
-}
-if(isset($_POST['auteur'], $_POST['message'])){
-  echo '<pre><p>' . $_POST['auteur'] . ': ' . $_POST['message'] . '</pre></p>';
+while($donnees = $chat){
+  echo '<p>' . $auteur . "</p>";
 }
 ?>
-
 
 <?php
 include ('inc/footer.php');
